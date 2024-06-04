@@ -25,6 +25,7 @@
   --color-pri: 0, 0, 0;
   --color-sec: 248, 248, 248;
   --color-ter: 203, 55, 55;
+  --color-qua: 255, 255, 255;
   color: rgb(var(--color-pri));
   font-family: var(--font-pri);
 }
@@ -35,7 +36,9 @@
 }
 
 input,
-button {
+button,
+select {
+  font-family: var(--font-pri);
   box-sizing: border-box;
   font-size: 1rem;
 }
@@ -93,7 +96,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-sec);
+  font-family: var(--font-pri);
   font-weight: 700;
   margin: 0px;
   padding: 0px;
