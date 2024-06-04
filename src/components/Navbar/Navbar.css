@@ -1,0 +1,89 @@
+#navbar {
+  grid-column: page;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(var(--color-sec));
+  align-items: center;
+  font-weight: 300;
+  gap: 28%;
+  padding: 0.55rem 0px;
+}
+
+.nav-top div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.nav-mid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0px;
+}
+
+.nav-mid div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav-button {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+}
+
+.nav-button span {
+  color: rgba(var(--color-pri), 50%);
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+#hamburger-menu {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: rgba(var(--color-qua));
+  background-color: rgba(var(--color-ter));
+}
+
+#hamburger-menu i {
+  font-size: 1rem;
+}
+
+#search {
+  border: solid 1px rgba(var(--color-pri), 20%);
+  border-radius: 2.5rem;
+  height: 2.5rem;
+  width: 9.5rem;
+  padding: 0rem 1rem;
+}
+
+.nav-links {
+  background-color: rgba(var(--color-sec));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+  gap: 1.125rem;
+  padding: 1rem 0rem;
+}
+
+.nav-links a:hover {
+  color: rgba(var(--color-ter));
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
