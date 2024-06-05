@@ -12,6 +12,11 @@
   padding: 0.55rem 0px;
 }
 
+.nav-top a:hover,
+.nav-top a:focus-visible {
+  color: rgba(var(--color-pri), 50%);
+}
+
 .nav-top div {
   display: flex;
   align-items: center;
@@ -19,11 +24,40 @@
   gap: 2.5rem;
 }
 
+#currency {
+  background-color: transparent;
+  border: none;
+  font-weight: 300;
+}
+
 .nav-mid {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 1rem 0px;
+}
+
+.nav-mid .right button {
+  transition: all 150ms linear;
+}
+
+.nav-mid .right button:hover,
+.nav-mid .right button:focus-visible {
+  background-color: initial;
+  color: rgba(var(--color-ter));
+}
+
+.nav-mid .right button:active {
+  filter: drop-shadow(3px 3px 1px rgba(var(--color-pri), 50%));
+}
+
+.nav-mid .right button:active i {
+  color: rgba(var(--color-ter), 100%);
+}
+
+.nav-mid .right button:hover span,
+.nav-mid .right button:focus-visible span {
+  color: rgba(var(--color-ter));
 }
 
 .nav-mid div {
@@ -48,14 +82,28 @@
   font-family: "Roboto";
   font-weight: 500;
   font-size: 0.9rem;
+  transition: all 150ms ease;
 }
 
 #hamburger-menu {
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.25rem;
   height: 2.5rem;
   width: 2.5rem;
   color: rgba(var(--color-qua));
   background-color: rgba(var(--color-ter));
+}
+
+#hamburger-menu:hover,
+#hamburger-menu:focus-visible {
+  background-color: black;
+}
+
+#hamburger-menu:active {
+  box-shadow: inset 0px 0px 10px 3px rgba(var(--color-ter), 100%);
 }
 
 #hamburger-menu i {
@@ -82,16 +130,19 @@
   padding: 1rem 0rem;
 }
 
-.nav-links a:hover {
+.nav-links a {
+  transition: all 150ms ease;
+}
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  outline: none;
   color: rgba(var(--color-ter));
   text-decoration: underline;
   text-underline-offset: 0.5rem;
+  text-underline-offset: 1.1rem;
+  text-decoration-thickness: 0.2rem;
 }
 
-.nav-mid .mid {
-  align-self: center;
-}
-
-.nav-logo {
-  align-self: center;
+.nav-links a:active {
+  text-shadow: 1px 1px 1px rgba(var(--color-pri), 50%);
 }

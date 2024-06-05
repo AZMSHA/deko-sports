@@ -35,6 +35,9 @@
   grid-template-columns: [page-start] 150px [content-start] 1fr [content-end] 150px [page-end];
 }
 
+#root *:focus-visible {
+  outline-color: rgb(var(--color-ter));
+}
 input,
 button,
 select {
@@ -56,7 +59,7 @@ input:focus,
 input:focus-visible,
 input:active {
   box-sizing: border-box;
-  border: 0.15rem solid rgb(var(--color-ter));
+  outline: 0.15rem solid rgb(var(--color-ter));
 }
 
 input[type="submit"],
@@ -73,7 +76,8 @@ i {
 
 input[type="submit"]:hover,
 input[type="button"]:hover,
-button:hover {
+button:hover,
+select:hover {
   cursor: pointer;
   background-color: rgb(var(--color-ter));
 }
@@ -84,6 +88,12 @@ button:active {
   border-color: rgb(var(--color-pri));
   background-color: rgba(var(--color-sec), 1);
   color: rgb(var(--color-pri));
+}
+
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible,
+button:focus-visible {
+  background-color: rgb(var(--color-ter));
 }
 
 button:active i {
@@ -101,6 +111,11 @@ h6 {
   margin: 0px;
   padding: 0px;
   line-height: 1em;
+  cursor: default;
+}
+
+p {
+  cursor: default;
 }
 
 p,

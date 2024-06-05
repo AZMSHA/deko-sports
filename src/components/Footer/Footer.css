@@ -1,0 +1,132 @@
+#main-footer {
+  grid-column: page;
+}
+
+#newsletter {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-around;
+  background-color: rgba(var(--color-sec));
+  height: 22rem;
+  margin-bottom: 3rem;
+  padding: 0rem 5rem;
+}
+
+#newsletter form + img {
+  align-self: baseline;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  min-width: 50%;
+}
+
+form h2 {
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+form label {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+form .form-field {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+form input {
+  font-weight: 500;
+  padding: 1.125rem 2rem;
+  width: 100%;
+  max-width: 32.5rem;
+  border-radius: 0.5rem;
+}
+form button {
+  color: rgba(var(--color-qua));
+  padding: 1.125rem 2.625rem;
+  text-transform: capitalize;
+  border-radius: 0.5rem;
+  background-color: rgba(var(--color-pri));
+}
+
+#footer-copyright,
+#footer-nav {
+  font-family: var(--font-sec) !important;
+  color: rgba(var(--color-qua)) !important;
+}
+
+#footer-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: rgba(var(--color-pri));
+  gap: 3rem;
+  padding: 2rem 8% 4rem 8%;
+}
+
+#footer-nav a {
+  transition: all 150ms ease-out;
+}
+
+#footer-nav a:hover {
+  color: rgba(var(--color-ter));
+}
+
+.footer-section h3 {
+  font-family: inherit;
+  text-transform: capitalize;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section ul {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 1.75rem;
+}
+
+.footer-section ul a,
+.footer-section ul a p {
+  font-size: 1.125rem;
+}
+
+.footer-section:first-child a li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.footer-section:nth-of-type(2) a {
+  text-transform: uppercase;
+}
+
+.footer-section:nth-of-type(3) a {
+  text-transform: capitalize;
+}
+
+#footer-copyright {
+  background-color: rgba(var(--color-pri), 93%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 8% 2rem 8%;
+}
+
+#footer-copyright .payment-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--font-pri);
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+}
+
+#footer-copyright .payment-options img {
+  width: 42%;
+}

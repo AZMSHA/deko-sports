@@ -2,4 +2,5 @@
   grid-column: content;
   display: grid;
   gap: 2rem;
+  padding-bottom: 4rem;
 }

@@ -1,4 +1,4 @@
-.products-section .product {
+.product {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,25 @@
   gap: 1rem;
 }
 
-.products-section .product span:not(.price) {
+.product-link {
+  width: 100%;
+}
+
+.product-link * {
+  transition: all 250ms ease;
+}
+
+.product-link:hover h3 {
+  color: rgba(var(--color-pri));
+}
+
+.product-link:hover .product,
+.product-link:focus-visible .product {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px rgba(var(--color-pri), 25%);
+}
+
+.product span:not(.price) {
   font-weight: 500;
   text-transform: capitalize;
   position: absolute;
@@ -19,11 +37,11 @@
   padding: 0.25rem 0.75rem;
 }
 
-.products-section .product:nth-child(3) span:not(.price) {
+.product-link:nth-child(3) span:not(.price) {
   background-color: rgba(var(--color-ter));
 }
 
-.products-section .product img {
+.product img {
   background-color: rgba(var(--color-sec));
   aspect-ratio: 1;
   width: 100%;
@@ -33,25 +51,21 @@
   object-position: center;
 }
 
-.products-section .product h3 {
+.product h3 {
   font-family: var(--color-sec);
   color: rgba(var(--color-pri), 60%);
   font-size: 1.25rem;
   text-transform: capitalize;
 }
 
-.products-section .product h3:hover {
-  color: rgba(var(--color-pri));
-}
-
-.products-section .product .price {
+.product .price {
   font-family: var(--font-sec);
   font-weight: 700;
   font-size: 1.25rem;
   color: rgba(var(--color-ter));
 }
 
-.products-section .product .rating {
+.product .rating {
   font-size: 0.75rem;
   color: gold;
 }

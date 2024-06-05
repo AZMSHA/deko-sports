@@ -12,11 +12,19 @@
   max-height: 1000px;
   object-fit: cover;
   object-position: 80% 0%;
+  animation: slideUp 750ms ease-out 0ms 1 forwards;
+  transform: translate(0%, 200%);
+  opacity: 0%;
 }
 
 .hero-img-2 {
   position: relative;
   filter: grayscale(1);
+  animation: slideDown 750ms ease-out 300ms 1 forwards !important;
+}
+
+.hero-img-3 {
+  animation-delay: 500ms !important;
 }
 
 #hero .textcontent {
@@ -31,6 +39,44 @@
   width: 100%;
 }
 
+@keyframes rotateUp {
+  from {
+    opacity: 0%;
+    transform: translate(0%, 200%) rotateX(90deg);
+  }
+
+  65% {
+    opacity: 50%;
+  }
+
+  to {
+    opacity: 100%;
+    transform: translate(0%, 0%) rotateX(0deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(0%, 200%);
+    opacity: 0%;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 100%;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(0%, -200%);
+    opacity: 0%;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 100%;
+  }
+}
+
 #hero .textcontent h1 {
   color: rgba(var(--color-qua));
   text-shadow: 0.25rem 0.25rem 0.2rem rgba(var(--color-pri), 100%);
@@ -38,12 +84,18 @@
 
 #hero .heading-1 {
   text-transform: uppercase;
+
+  opacity: 0%;
   font-size: 2rem;
+  animation: rotateUp 750ms ease-out 700ms 1 forwards;
 }
 
 #hero .heading-2 {
   text-transform: capitalize;
+
+  opacity: 0%;
   font-size: 5rem;
+  animation: rotateUp 750ms ease-out 800ms 1 forwards;
 }
 
 #hero .call-to-action {
@@ -52,5 +104,13 @@
   font-size: 1.125rem;
   font-weight: 500;
   padding: 0.6rem 0.75rem;
+
+  opacity: 0%;
   border-radius: 50rem;
+  animation: rotateUp 750ms ease-out 1000ms 1 forwards;
+}
+
+#hero .call-to-action:active {
+  color: rgba(var(--color-qua));
+  background-color: rgba(var(--color-pri), 100%);
 }

@@ -49,9 +49,6 @@
   font-size: 1.125rem;
   margin-bottom: 0.5rem;
 }
-.banners button {
-  font-size: 0.825rem;
-}
 
 .banners h2 span {
   text-transform: capitalize;
@@ -62,6 +59,7 @@
 }
 
 .banners button {
+  font-size: 0.825rem;
   padding: 0.75rem 1rem;
   text-transform: uppercase;
   background-color: rgb(var(--color-pri));

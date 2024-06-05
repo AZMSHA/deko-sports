@@ -20,15 +20,17 @@ function Product({ recent, img, title, rating, price }) {
     return stars;
   }
   return (
-    <article className="product">
-      {recent ? <span>new</span> : null}
-      <img src={img} alt={title} />
-      <a href="/#">
+    <a className="product-link" href="/#">
+      <article className="product">
+        {recent ? <span>new</span> : null}
+        <img src={img} alt={title} />
+
         <h3>{title}</h3>
-      </a>
-      <div className="rating">{ratingCreate(rating)}</div>
-      <span className="price">{`$${price.toFixed(2)}`}</span>
-    </article>
+
+        <div className="rating">{ratingCreate(rating)}</div>
+        <span className="price">{`$${price.toFixed(2)}`}</span>
+      </article>
+    </a>
   );
 }
 
