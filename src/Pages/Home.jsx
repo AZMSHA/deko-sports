@@ -3,6 +3,7 @@ import ProductsSection from "../components/Home/ProductsSection";
 import PropTypes from "prop-types";
 import "./Home.css";
 import { useState, useEffect } from "react";
+import Banners from "../components/Home/Banners";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
@@ -52,6 +53,7 @@ function Home(props) {
         subheading={"new products of our store"}
         products={products}
       />
+      <Banners />
       <ProductsSection
         title={"featured products"}
         subheading={"featured products of our store"}

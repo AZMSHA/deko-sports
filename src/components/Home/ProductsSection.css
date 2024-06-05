@@ -1,7 +1,7 @@
 .products-section-title {
   display: flex;
   gap: 1rem;
-  padding: 2rem 0rem;
+  padding-bottom: 2rem;
 }
 
 .products-section-title .section-title {

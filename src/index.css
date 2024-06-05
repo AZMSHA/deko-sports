@@ -32,7 +32,7 @@
 
 #root {
   display: grid;
-  grid-template-columns: [page-start] 200px [content-start] 1fr [content-end] 200px [page-end];
+  grid-template-columns: [page-start] 150px [content-start] 1fr [content-end] 150px [page-end];
 }
 
 input,
@@ -116,4 +116,8 @@ select {
   list-style: none;
   text-decoration: none;
   color: inherit;
+}
+
+img {
+  user-select: none;
 }
