@@ -77,8 +77,8 @@
   justify-content: center;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 20px;
-  gap: 1.125rem;
+  font-size: 1.125rem;
+  gap: 3rem;
   padding: 1rem 0rem;
 }
 
@@ -86,4 +86,12 @@
   color: rgba(var(--color-ter));
   text-decoration: underline;
   text-underline-offset: 0.5rem;
+}
+
+.nav-mid .mid {
+  align-self: center;
+}
+
+.nav-logo {
+  align-self: center;
 }

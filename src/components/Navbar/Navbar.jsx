@@ -29,8 +29,12 @@ function Navbar({ links }) {
           </button>
           <input type="search" placeholder="Search" name="search" id="search" />
         </div>
-        <a href="/#">
-          <img src="/src/assets/logo.png" alt="Deko Sports Logo" />
+        <a className="mid" href="/#">
+          <img
+            className="nav-logo"
+            src="/src/assets/logo.png"
+            alt="Deko Sports Logo"
+          />
         </a>
         <div className="right">
           <button type="button" className="nav-button">
