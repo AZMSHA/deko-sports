@@ -4,6 +4,7 @@
   justify-content: center;
   gap: 1.5rem;
   padding-top: 1rem;
+  overflow: hidden;
 }
 
 .banners article[class^="banner"] {
@@ -39,6 +40,7 @@
 }
 
 .banners h2 {
+  opacity: 0%;
   display: flex;
   flex-direction: column;
   font-size: 1.25rem;
@@ -46,11 +48,13 @@
   gap: 0.5rem;
 }
 .banners p {
+  opacity: 0%;
   font-size: 1.125rem;
   margin-bottom: 0.5rem;
 }
 
 .banners h2 span {
+  opacity: 0%;
   text-transform: capitalize;
   font-family: var(--font-pri);
   font-weight: 500;
@@ -59,8 +63,35 @@
 }
 
 .banners button {
+  opacity: 0%;
   font-size: 0.825rem;
   padding: 0.75rem 1rem;
   text-transform: uppercase;
   background-color: rgb(var(--color-pri));
+}
+
+.banners article[class^="banner"].animate {
+  h2 {
+    animation: slideRight 750ms ease-out 100ms 1 forwards;
+  }
+  span {
+    animation: rotateUp 750ms ease-out 900ms 1 forwards;
+  }
+  p {
+    animation: rotateUp 750ms ease-out 1000ms 1 forwards;
+  }
+  button {
+    animation: rotateUp 750ms ease-out 1000ms 1 forwards;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0%;
+    transform: translate(-100%, 0%);
+  }
+  to {
+    opacity: 100%;
+    transform: translate(0%, 0%);
+  }
 }

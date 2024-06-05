@@ -1,6 +1,35 @@
 import "./Footer.css";
+import { useEffect } from "react";
 
 function Footer() {
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the class when the element is in the viewport
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target); // Stop observing the element
+        } else {
+          // Remove the class when the element is not in the viewport
+          entry.target.classList.remove("animate");
+        }
+      });
+    }, options);
+
+    const elements = document.querySelectorAll("#newsletter .img-trigger");
+    elements.forEach((element) => observer.observe(element));
+
+    // Cleanup function
+    return () => {
+      elements.forEach((element) => observer.unobserve(element));
+    };
+  }, []);
   return (
     <footer id="main-footer">
       <aside id="newsletter">
@@ -20,10 +49,12 @@ function Footer() {
             <button type="submit">submit</button>
           </div>
         </form>
-        <img
-          src="/src/assets/footer-img.png"
-          alt="Cyclist wearing Deko Sportswear"
-        />
+        <div className="img-trigger">
+          <img
+            src="/src/assets/footer-img.png"
+            alt="Cyclist wearing Deko Sportswear"
+          />
+        </div>
       </aside>
       <nav id="footer-nav">
         <section className="footer-section">
@@ -109,8 +140,8 @@ function Footer() {
       </nav>
       <div id="footer-copyright">
         <p>
-          Copyright © 2020 Sports Konnection all rights reserved. Powered by NJ
-          Dynamic Solutions.
+          Copyright &copy; 2020 Sports Konnection all rights reserved. Powered
+          by NJ Dynamic Solutions.
         </p>
         <div className="payment-options">
           <span>payment acceptable on</span>

@@ -1,6 +1,37 @@
 import "./Banners.css";
+import { useEffect } from "react";
 
 function Banners() {
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the class when the element is in the viewport
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target); // Stop observing the element
+        } else {
+          // Remove the class when the element is not in the viewport
+          entry.target.classList.remove("animate");
+        }
+      });
+    }, options);
+
+    const elements = document.querySelectorAll(
+      '.banners article[class^="banner"]'
+    );
+    elements.forEach((element) => observer.observe(element));
+
+    // Cleanup function
+    return () => {
+      elements.forEach((element) => observer.unobserve(element));
+    };
+  }, []);
   return (
     <section className="banners">
       <article className="banner1">

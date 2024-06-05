@@ -1,9 +1,13 @@
 #hero {
-  display: grid;
-  grid-template-columns: 0.8fr 1.1fr 0.8fr;
   position: relative;
+}
+
+#hero .hero-images {
+  display: grid;
   height: calc(100vh - 13.5rem);
   max-height: 1000px;
+  grid-template-columns: 0.8fr 1.1fr 0.8fr;
+  overflow: hidden;
 }
 
 #hero img {

@@ -11,7 +11,7 @@ function ProductsSection({ products, title, subheading }) {
       </header>
       <div className="products">
         {products.map((product) => {
-          return <Product key={product.img} {...product} />;
+          return <Product key={product.img + product.title} {...product} />;
         })}
       </div>
     </section>
