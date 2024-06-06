@@ -118,3 +118,22 @@
   color: rgba(var(--color-qua));
   background-color: rgba(var(--color-pri), 100%);
 }
+
+#home .slick-slider.slick-initialized {
+  width: calc(99vw - 300px);
+}
+
+#home .slick-prev {
+  z-index: 1;
+  left: -3rem;
+}
+
+#home .slick-next {
+  z-index: 1;
+}
+
+#home .slick-prev:before,
+#home .slick-next:before {
+  color: black;
+  font-size: 3rem;
+}

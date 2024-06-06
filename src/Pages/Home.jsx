@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import "./Home.css";
 import { useState, useEffect } from "react";
 import Banners from "../components/Home/Banners";
+import Carousel from "../components/Carousel/Carousel";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -41,19 +42,45 @@ function Home() {
   }, []);
   return (
     <main id="home">
-      <Hero
-        images={[
-          { link: "/src/assets/heroimg1.png", className: "hero-img-1" },
-          { link: "/src/assets/heroimg2.png", className: "hero-img-2" },
-          { link: "/src/assets/heroimg3.png", className: "hero-img-3" },
-        ]}
-      />
+      <Carousel
+        settings={{
+          dots: true,
+          infinite: false,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }}
+      >
+        <Hero
+          images={[
+            { link: "/src/assets/heroimg1.png", className: "hero-img-1" },
+            { link: "/src/assets/heroimg2.png", className: "hero-img-2" },
+            { link: "/src/assets/heroimg3.png", className: "hero-img-3" },
+          ]}
+        />
+        <Hero
+          images={[
+            { link: "/src/assets/heroimg1.png", className: "hero-img-1" },
+            { link: "/src/assets/heroimg2.png", className: "hero-img-2" },
+            { link: "/src/assets/heroimg3.png", className: "hero-img-3" },
+          ]}
+        />
+        <Hero
+          images={[
+            { link: "/src/assets/heroimg1.png", className: "hero-img-1" },
+            { link: "/src/assets/heroimg2.png", className: "hero-img-2" },
+            { link: "/src/assets/heroimg3.png", className: "hero-img-3" },
+          ]}
+        />
+      </Carousel>
+
       <ProductsSection
         title={"new arrivals"}
         subheading={"new products of our store"}
         products={products}
       />
       <Banners />
+      <Carousel></Carousel>
       <ProductsSection
         title={"featured products"}
         subheading={"featured products of our store"}
