@@ -22,8 +22,12 @@
 
 .product-link:hover .product,
 .product-link:focus-visible .product {
-  transform: scale(1.05);
   box-shadow: 0px 0px 5px rgba(var(--color-pri), 25%);
+}
+
+.product-link:hover .product img,
+.product-link:focus-visible .product img {
+  transform: scale(1.05);
 }
 
 .product span:not(.price) {
@@ -32,6 +36,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
+  z-index: 2;
   background-color: rgba(var(--color-pri));
   color: rgba(var(--color-qua));
   padding: 0.25rem 0.75rem;
@@ -46,7 +51,7 @@
   aspect-ratio: 1;
   width: 100%;
   min-width: 150px;
-  max-width: 1000px;
+  max-width: 500px;
   object-fit: cover;
   object-position: center;
 }

@@ -1,8 +1,31 @@
 import "./Footer.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Footer() {
+  const [domLoaded, setDomLoaded] = useState(false);
+
   useEffect(() => {
+    const handleDOMContentLoaded = () => {
+      setDomLoaded(true);
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    } else {
+      setDomLoaded(true); // If DOM is already loaded
+    }
+
+    return () => {
+      document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!domLoaded) return;
+
+    const trigger = document.querySelector("#newsletter .img-trigger");
+    if (!trigger) return; // Make sure the trigger element exists
+
     const options = {
       root: null,
       rootMargin: "0px",
@@ -13,6 +36,7 @@ function Footer() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Add the class when the element is in the viewport
+          console.log("entry");
           entry.target.classList.add("animate");
           observer.unobserve(entry.target); // Stop observing the element
         } else {
@@ -22,14 +46,13 @@ function Footer() {
       });
     }, options);
 
-    const elements = document.querySelectorAll("#newsletter .img-trigger");
-    elements.forEach((element) => observer.observe(element));
+    observer.observe(trigger);
 
     // Cleanup function
     return () => {
-      elements.forEach((element) => observer.unobserve(element));
+      observer.unobserve(trigger);
     };
-  }, []);
+  }, [domLoaded]);
   return (
     <footer id="main-footer">
       <aside id="newsletter">

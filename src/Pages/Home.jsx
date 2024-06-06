@@ -44,6 +44,7 @@ function Home() {
     <main id="home">
       <Carousel
         settings={{
+          className: "hero-slider",
           dots: true,
           infinite: false,
           speed: 500,
@@ -80,7 +81,6 @@ function Home() {
         products={products}
       />
       <Banners />
-      <Carousel></Carousel>
       <ProductsSection
         title={"featured products"}
         subheading={"featured products of our store"}

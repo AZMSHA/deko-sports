@@ -119,21 +119,21 @@
   background-color: rgba(var(--color-pri), 100%);
 }
 
-#home .slick-slider.slick-initialized {
+.hero-slider.slick-slider.slick-initialized {
   width: calc(99vw - 300px);
 }
 
-#home .slick-prev {
+.hero-slider .slick-prev {
   z-index: 1;
   left: -3rem;
 }
 
-#home .slick-next {
+.hero-slider .slick-next {
   z-index: 1;
 }
 
-#home .slick-prev:before,
-#home .slick-next:before {
+.hero-slider .slick-prev:before,
+.hero-slider .slick-next:before {
   color: black;
   font-size: 3rem;
 }

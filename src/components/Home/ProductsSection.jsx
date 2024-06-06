@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import "./ProductsSection.css";
 import Product from "./Product";
+import Carousel from "../Carousel/Carousel";
 
 function ProductsSection({ products, title, subheading }) {
   return (
@@ -10,9 +11,25 @@ function ProductsSection({ products, title, subheading }) {
         <p className="section-subheading">{subheading}</p>
       </header>
       <div className="products">
-        {products.map((product) => {
-          return <Product key={product.img + product.title} {...product} />;
-        })}
+        <Carousel
+          settings={{
+            infinite: true,
+            className: "product-section-slider",
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+          }}
+        >
+          {products.map((product) => {
+            return <Product key={product.img + product.title} {...product} />;
+          })}
+          {products.map((product) => {
+            return <Product key={product.img + product.title} {...product} />;
+          })}
+          {products.map((product) => {
+            return <Product key={product.img + product.title} {...product} />;
+          })}
+        </Carousel>
       </div>
     </section>
   );

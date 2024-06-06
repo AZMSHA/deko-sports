@@ -15,6 +15,7 @@
 
 #newsletter form + .img-trigger {
   align-self: baseline;
+  z-index: 10;
 }
 
 #newsletter form + .img-trigger img {
