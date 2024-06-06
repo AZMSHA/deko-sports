@@ -90,7 +90,7 @@
 
 #hamburger-menu {
   border-radius: 50%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding-top: 0.25rem;
@@ -157,6 +157,7 @@
 }
 
 .nav-dropdown {
+  width: 60vw;
   z-index: -1;
   position: absolute;
   bottom: 0px;
@@ -167,7 +168,8 @@
   transition: all 350ms ease-out;
   display: flex;
   align-items: flex-start;
-  gap: 3rem;
+  justify-content: center;
+  gap: 5rem;
   padding: 3rem;
   opacity: 0%;
 }
@@ -177,35 +179,33 @@
   opacity: 100%;
 }
 
-.nav-dropdown-links {
-  h4 {
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: -0.02rem;
-    word-spacing: -0.01rem;
-    padding-bottom: 1rem;
-    text-transform: uppercase;
-    transition: all 150ms ease-out;
-  }
+.nav-dropdown-links h4 {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: -0.02rem;
+  word-spacing: -0.01rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  transition: all 150ms ease-out;
+}
 
-  ul {
-    border-top: 1px solid rgba(var(--color-pri), 20%);
-    padding-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1rem;
-  }
+.nav-dropdown-links ul {
+  border-top: 1px solid rgba(var(--color-pri), 20%);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
 
-  a {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 0.9rem;
-    word-spacing: -0.01rem;
-    letter-spacing: -0.02rem;
-    transition: all 150ms ease-out;
-  }
+.nav-dropdown-links a {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.9rem;
+  word-spacing: -0.01rem;
+  letter-spacing: -0.02rem;
+  transition: all 150ms ease-out;
 }
 
 .nav-dropdown-links a:hover {

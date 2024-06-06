@@ -18,6 +18,42 @@ function ProductsSection({ products, title, subheading }) {
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 4,
+            responsive: [
+              {
+                breakpoint: 1120,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 4,
+                  arrows: true,
+                },
+              },
+              {
+                breakpoint: 900,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  arrows: false,
+                },
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: false,
+                },
+              },
+
+              {
+                breakpoint: 0,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  dots: true,
+                  arrows: false,
+                },
+              },
+            ],
           }}
         >
           {products.map((product) => {

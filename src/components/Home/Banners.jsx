@@ -1,8 +1,33 @@
 import "./Banners.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Banners() {
+  const [domLoaded, setDomLoaded] = useState(false);
+
   useEffect(() => {
+    const handleDOMContentLoaded = () => {
+      setDomLoaded(true);
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    } else {
+      setDomLoaded(true); // If DOM is already loaded
+    }
+
+    return () => {
+      document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!domLoaded) return;
+
+    const elements = document.querySelectorAll(
+      '.banners article[class^="banner"]'
+    );
+    if (!elements) return; // Make sure the trigger element exists
+
     const options = {
       root: null,
       rootMargin: "0px",
@@ -22,16 +47,14 @@ function Banners() {
       });
     }, options);
 
-    const elements = document.querySelectorAll(
-      '.banners article[class^="banner"]'
-    );
     elements.forEach((element) => observer.observe(element));
 
     // Cleanup function
     return () => {
       elements.forEach((element) => observer.unobserve(element));
     };
-  }, []);
+  }, [domLoaded]);
+
   return (
     <section className="banners">
       <article className="banner1">

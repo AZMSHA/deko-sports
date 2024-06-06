@@ -50,6 +50,22 @@ function Home() {
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 0,
+              settings: {
+                dots: true,
+                arrows: true,
+              },
+            },
+            {
+              breakpoint: 1120,
+              settings: {
+                dots: false,
+                arrows: false,
+              },
+            },
+          ],
         }}
       >
         <Hero

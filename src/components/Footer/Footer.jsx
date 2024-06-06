@@ -36,7 +36,6 @@ function Footer() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Add the class when the element is in the viewport
-          console.log("entry");
           entry.target.classList.add("animate");
           observer.unobserve(entry.target); // Stop observing the element
         } else {
