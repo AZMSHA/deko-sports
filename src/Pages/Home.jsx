@@ -5,7 +5,7 @@ import "./Home.css";
 import { useState, useEffect } from "react";
 import Banners from "../components/Home/Banners";
 
-function Home(props) {
+function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     setProducts([

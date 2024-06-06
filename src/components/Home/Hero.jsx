@@ -27,7 +27,7 @@ function Hero({ images }) {
   );
 }
 
-Hero.PropTypes = {
+Hero.propTypes = {
   images: PropTypes.array,
 };
 

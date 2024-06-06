@@ -1,19 +1,242 @@
 import "./Navbar.css";
 import PropTypes from "prop-types";
 
-function Navbar({ links }) {
+function Navbar() {
+  const links = [
+    {
+      section: "men",
+      categories: [
+        {
+          header: "Men's Suits",
+          links: [
+            "Summer Cycling Suits",
+            "Winter Cycling Suits",
+            "Base Layer Suits",
+            "Triathlon Suits",
+          ],
+        },
+        {
+          header: "Men's Tops",
+          links: [
+            "Jerseys",
+            "Long Sleeve Jerseys",
+            "Base Layer Tops",
+            "Gilets",
+            "Jackets",
+          ],
+        },
+        {
+          header: "Men's Bottoms",
+          links: [
+            "Bib Shorts & MTB Shorts",
+            "Bib Tights & Leggings",
+            "Base Layer Bottoms",
+          ],
+        },
+        {
+          header: "Men's Accessories",
+          links: [
+            "Short Finger Gloves",
+            "Winter Cycling Gloves",
+            "Hats & Caps",
+            "Warmers",
+            "Shoes",
+          ],
+        },
+      ],
+    },
+    {
+      section: "women",
+      categories: [
+        {
+          header: "Women's Suits",
+          links: [
+            "Summer Cycling Suits",
+            "Winter Cycling Suits",
+            "Base Layer Suits",
+            "Triathlon Suits",
+          ],
+        },
+        {
+          header: "Women's Tops",
+          links: [
+            "Jerseys",
+            "Long Sleeve Jerseys",
+            "Base Layer Tops",
+            "Gilets",
+            "Jackets",
+          ],
+        },
+        {
+          header: "Women's Bottoms",
+          links: [
+            "Bib Shorts & MTB Shorts",
+            "Bib Tights & Leggings",
+            "Base Layer Bottoms",
+          ],
+        },
+        {
+          header: "Women's Accessories",
+          links: [
+            "Short Finger Gloves",
+            "Winter Cycling Gloves",
+            "Hats & Caps",
+            "Warmers",
+            "Shoes",
+          ],
+        },
+      ],
+    },
+    {
+      section: "sale",
+      categories: [
+        {
+          header: "Sale Suits",
+          links: [
+            "Summer Cycling Suits on Sale",
+            "Winter Cycling Suits on Sale",
+            "Discounted Base Layer Suits",
+            "Triathlon Suits on Sale",
+          ],
+        },
+        {
+          header: "Sale Tops",
+          links: [
+            "Jerseys on Sale",
+            "Long Sleeve Jerseys on Sale",
+            "Discounted Base Layer Tops",
+            "Gilets on Sale",
+            "Jackets on Sale",
+          ],
+        },
+        {
+          header: "Sale Bottoms",
+          links: [
+            "Bib Shorts & MTB Shorts on Sale",
+            "Bib Tights & Leggings on Sale",
+            "Discounted Base Layer Bottoms",
+          ],
+        },
+        {
+          header: "Sale Accessories",
+          links: [
+            "Short Finger Gloves on Sale",
+            "Winter Cycling Gloves on Sale",
+            "Hats & Caps on Sale",
+            "Warmers on Sale",
+            "Shoes on Sale",
+          ],
+        },
+      ],
+    },
+    {
+      section: "new arrivals",
+      categories: [
+        {
+          header: "New Arrival Suits",
+          links: [
+            "New Summer Cycling Suits",
+            "New Winter Cycling Suits",
+            "New Base Layer Suits",
+            "New Triathlon Suits",
+          ],
+        },
+        {
+          header: "New Arrival Tops",
+          links: [
+            "New Jerseys",
+            "New Long Sleeve Jerseys",
+            "New Base Layer Tops",
+            "New Gilets",
+            "New Jackets",
+          ],
+        },
+        {
+          header: "New Arrival Bottoms",
+          links: [
+            "New Bib Shorts & MTB Shorts",
+            "New Bib Tights & Leggings",
+            "New Base Layer Bottoms",
+          ],
+        },
+        {
+          header: "New Arrival Accessories",
+          links: [
+            "New Short Finger Gloves",
+            "New Winter Cycling Gloves",
+            "New Hats & Caps",
+            "New Warmers",
+            "New Shoes",
+          ],
+        },
+      ],
+    },
+    {
+      section: "size guide",
+      categories: [
+        {
+          header: "Size Guide for Suits",
+          links: [
+            "Summer Cycling Suits Size Guide",
+            "Winter Cycling Suits Size Guide",
+            "Base Layer Suits Size Guide",
+            "Triathlon Suits Size Guide",
+          ],
+        },
+        {
+          header: "Size Guide for Tops",
+          links: [
+            "Jerseys Size Guide",
+            "Long Sleeve Jerseys Size Guide",
+            "Base Layer Tops Size Guide",
+            "Gilets Size Guide",
+            "Jackets Size Guide",
+          ],
+        },
+        {
+          header: "Size Guide for Bottoms",
+          links: [
+            "Bib Shorts & MTB Shorts Size Guide",
+            "Bib Tights & Leggings Size Guide",
+            "Base Layer Bottoms Size Guide",
+          ],
+        },
+        {
+          header: "Size Guide for Accessories",
+          links: [
+            "Short Finger Gloves Size Guide",
+            "Winter Cycling Gloves Size Guide",
+            "Hats & Caps Size Guide",
+            "Warmers Size Guide",
+            "Shoes Size Guide",
+          ],
+        },
+      ],
+    },
+  ];
+
   function bringToFront(e) {
     e.preventDefault();
     const menuID = e.target.getAttribute("menu");
-    const section = document.getElementById(menuID);
-    section.classList.add("active");
+    const category = document.getElementById(menuID);
+    category.classList.add("active");
   }
 
   function pushToBack(e) {
     e.preventDefault();
     const menuID = e.target.getAttribute("menu");
-    const section = document.getElementById(menuID);
-    section.classList.remove("active");
+    const category = document.getElementById(menuID);
+    category.classList.remove("active");
+  }
+
+  function turnOn(e) {
+    e.preventDefault();
+    e.target.classList.add("active");
+  }
+
+  function turnOff(e) {
+    e.preventDefault();
+    e.target.classList.remove("active");
   }
 
   return (
@@ -66,384 +289,37 @@ function Navbar({ links }) {
       "
       >
         {links.map((link) => (
-          <a
-            onMouseOver={(e) => bringToFront(e)}
-            onMouseLeave={(e) => pushToBack(e)}
-            menu={link.replace(/ /g, "-")}
-            key={link}
-            href="/#"
-          >
-            {link}
-          </a>
+          <div key={link.section} className="nav-link">
+            <a
+              onMouseOver={(e) => bringToFront(e)}
+              onMouseLeave={(e) => pushToBack(e)}
+              menu={link.section.replace(/ /g, "-")}
+              href="/#"
+            >
+              {link.section}
+            </a>
+            <div
+              id={link.section.replace(/ /g, "-")}
+              onMouseOver={(e) => turnOn(e)}
+              onMouseLeave={(e) => turnOff(e)}
+              className="nav-dropdown"
+            >
+              {link.categories.map((category) => (
+                <section key={category.header} className="nav-dropdown-links">
+                  <h4>{category.header}</h4>
+                  <ul>
+                    {category.links.map((link) => (
+                      <a key={link} href="/#">
+                        <li>{link}</li>
+                      </a>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </div>
         ))}
       </nav>
-      <div className="nav-dropdown">
-        <div id="men" className="nav-dropdown-category">
-          <section className="nav-dropdown-links">
-            <h4>SUITS</h4>
-            <ul>
-              <a href="/#">
-                <li>SUMMER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER SUITS</li>
-              </a>
-              <a href="/#">
-                <li>TRIATHLON SUITS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>TOPS</h4>
-            <ul>
-              <a href="/#">
-                <li>JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>LONG SLEEVE JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER TOPS</li>
-              </a>
-              <a href="/#">
-                <li>GILETS</li>
-              </a>
-              <a href="/#">
-                <li>JACKETS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>BOTTOMS</h4>
-            <ul>
-              <a href="/#">
-                <li>BIB SHORTS & MTB SHORTS</li>
-              </a>
-              <a href="/#">
-                <li>BIB TIGHTS & LEGGINGS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER BOTTOMS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>ACCESSORIES</h4>
-            <ul>
-              <a href="/#">
-                <li>SHORT FINGER GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>HATS & CAPS</li>
-              </a>
-              <a href="/#">
-                <li>WARMERS</li>
-              </a>
-              <a href="/#">
-                <li>SHOES</li>
-              </a>
-            </ul>
-          </section>
-        </div>
-        <div id="women" className="nav-dropdown-category">
-          <section className="nav-dropdown-links">
-            <h4>SUITS</h4>
-            <ul>
-              <a href="/#">
-                <li>SUMMER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER SUITS</li>
-              </a>
-              <a href="/#">
-                <li>TRIATHLON SUITS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>TOPS</h4>
-            <ul>
-              <a href="/#">
-                <li>JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>LONG SLEEVE JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER TOPS</li>
-              </a>
-              <a href="/#">
-                <li>GILETS</li>
-              </a>
-              <a href="/#">
-                <li>JACKETS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>BOTTOMS</h4>
-            <ul>
-              <a href="/#">
-                <li>BIB SHORTS & MTB SHORTS</li>
-              </a>
-              <a href="/#">
-                <li>BIB TIGHTS & LEGGINGS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER BOTTOMS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>ACCESSORIES</h4>
-            <ul>
-              <a href="/#">
-                <li>SHORT FINGER GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>HATS & CAPS</li>
-              </a>
-              <a href="/#">
-                <li>WARMERS</li>
-              </a>
-              <a href="/#">
-                <li>SHOES</li>
-              </a>
-            </ul>
-          </section>
-        </div>
-        <div id="sale" className="nav-dropdown-category">
-          <section className="nav-dropdown-links">
-            <h4>SUITS</h4>
-            <ul>
-              <a href="/#">
-                <li>SUMMER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER SUITS</li>
-              </a>
-              <a href="/#">
-                <li>TRIATHLON SUITS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>TOPS</h4>
-            <ul>
-              <a href="/#">
-                <li>JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>LONG SLEEVE JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER TOPS</li>
-              </a>
-              <a href="/#">
-                <li>GILETS</li>
-              </a>
-              <a href="/#">
-                <li>JACKETS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>BOTTOMS</h4>
-            <ul>
-              <a href="/#">
-                <li>BIB SHORTS & MTB SHORTS</li>
-              </a>
-              <a href="/#">
-                <li>BIB TIGHTS & LEGGINGS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER BOTTOMS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>ACCESSORIES</h4>
-            <ul>
-              <a href="/#">
-                <li>SHORT FINGER GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>HATS & CAPS</li>
-              </a>
-              <a href="/#">
-                <li>WARMERS</li>
-              </a>
-              <a href="/#">
-                <li>SHOES</li>
-              </a>
-            </ul>
-          </section>
-        </div>
-        <div id="new-arrival" className="nav-dropdown-category">
-          <section className="nav-dropdown-links">
-            <h4>SUITS</h4>
-            <ul>
-              <a href="/#">
-                <li>SUMMER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER SUITS</li>
-              </a>
-              <a href="/#">
-                <li>TRIATHLON SUITS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>TOPS</h4>
-            <ul>
-              <a href="/#">
-                <li>JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>LONG SLEEVE JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER TOPS</li>
-              </a>
-              <a href="/#">
-                <li>GILETS</li>
-              </a>
-              <a href="/#">
-                <li>JACKETS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>BOTTOMS</h4>
-            <ul>
-              <a href="/#">
-                <li>BIB SHORTS & MTB SHORTS</li>
-              </a>
-              <a href="/#">
-                <li>BIB TIGHTS & LEGGINGS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER BOTTOMS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>ACCESSORIES</h4>
-            <ul>
-              <a href="/#">
-                <li>SHORT FINGER GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>HATS & CAPS</li>
-              </a>
-              <a href="/#">
-                <li>WARMERS</li>
-              </a>
-              <a href="/#">
-                <li>SHOES</li>
-              </a>
-            </ul>
-          </section>
-        </div>
-        <div id="size-guide" className="nav-dropdown-category">
-          <section className="nav-dropdown-links">
-            <h4>SUITS</h4>
-            <ul>
-              <a href="/#">
-                <li>SUMMER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING SUITS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER SUITS</li>
-              </a>
-              <a href="/#">
-                <li>TRIATHLON SUITS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>TOPS</h4>
-            <ul>
-              <a href="/#">
-                <li>JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>LONG SLEEVE JERSEYS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER TOPS</li>
-              </a>
-              <a href="/#">
-                <li>GILETS</li>
-              </a>
-              <a href="/#">
-                <li>JACKETS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>BOTTOMS</h4>
-            <ul>
-              <a href="/#">
-                <li>BIB SHORTS & MTB SHORTS</li>
-              </a>
-              <a href="/#">
-                <li>BIB TIGHTS & LEGGINGS</li>
-              </a>
-              <a href="/#">
-                <li>BASE LAYER BOTTOMS</li>
-              </a>
-            </ul>
-          </section>
-          <section className="nav-dropdown-links">
-            <h4>ACCESSORIES</h4>
-            <ul>
-              <a href="/#">
-                <li>SHORT FINGER GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>WINTER CYCLING GLOVES</li>
-              </a>
-              <a href="/#">
-                <li>HATS & CAPS</li>
-              </a>
-              <a href="/#">
-                <li>WARMERS</li>
-              </a>
-              <a href="/#">
-                <li>SHOES</li>
-              </a>
-            </ul>
-          </section>
-        </div>
-      </div>
     </header>
   );
 }

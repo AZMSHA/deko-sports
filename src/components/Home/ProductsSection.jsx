@@ -18,6 +18,10 @@ function ProductsSection({ products, title, subheading }) {
   );
 }
 
-ProductsSection.propTypes = {};
+ProductsSection.propTypes = {
+  products: PropTypes.array,
+  title: PropTypes.string,
+  subheading: PropTypes.string,
+};
 
 export default ProductsSection;

@@ -9,9 +9,9 @@ function Product({ recent, img, title, rating, price }) {
 
     while (loop) {
       if (index) {
-        stars.push(<i className="fa-solid fa-star"></i>);
+        stars.push(<i key={loop} className="fa-solid fa-star"></i>);
       } else {
-        stars.push(<i className="fa-regular fa-star"></i>);
+        stars.push(<i key={loop} className="fa-regular fa-star"></i>);
       }
       index--;
       loop--;
