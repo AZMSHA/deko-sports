@@ -125,7 +125,6 @@
     display: flex;
   }
   #newsletter form + .img-trigger {
-    align-self: baseline;
     z-index: 10;
     transform: translate(-35%, 0px);
   }
