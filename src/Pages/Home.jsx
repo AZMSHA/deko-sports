@@ -12,28 +12,28 @@ function Home() {
     setProducts([
       {
         recent: true,
-        img: "/src/assets/product-images/product-img1.png",
+        img: "/assets/product-images/product-img1.png",
         title: "cycling gloves",
         rating: 5,
         price: 100,
       },
       {
         recent: true,
-        img: "/src/assets/product-images/product-img2.png",
+        img: "/assets/product-images/product-img2.png",
         title: "cycling shoes",
         rating: 5,
         price: 100,
       },
       {
         recent: true,
-        img: "/src/assets/product-images/product-img3.png",
+        img: "/assets/product-images/product-img3.png",
         title: "cycling gloves",
         rating: 5,
         price: 100,
       },
       {
         recent: true,
-        img: "/src/assets/product-images/product-img4.png",
+        img: "/assets/product-images/product-img4.png",
         title: "cycling shoes",
         rating: 5,
         price: 100,
@@ -70,23 +70,23 @@ function Home() {
       >
         <Hero
           images={[
-            { link: "/src/assets/heroimg1.png", className: "hero-img-1" },
-            { link: "/src/assets/heroimg2.png", className: "hero-img-2" },
-            { link: "/src/assets/heroimg3.png", className: "hero-img-3" },
+            { link: "/assets/heroimg1.png", className: "hero-img-1" },
+            { link: "/assets/heroimg2.png", className: "hero-img-2" },
+            { link: "/assets/heroimg3.png", className: "hero-img-3" },
           ]}
         />
         <Hero
           images={[
-            { link: "/src/assets/heroimg1.png", className: "hero-img-1" },
-            { link: "/src/assets/heroimg2.png", className: "hero-img-2" },
-            { link: "/src/assets/heroimg3.png", className: "hero-img-3" },
+            { link: "/assets/heroimg1.png", className: "hero-img-1" },
+            { link: "/assets/heroimg2.png", className: "hero-img-2" },
+            { link: "/assets/heroimg3.png", className: "hero-img-3" },
           ]}
         />
         <Hero
           images={[
-            { link: "/src/assets/heroimg1.png", className: "hero-img-1" },
-            { link: "/src/assets/heroimg2.png", className: "hero-img-2" },
-            { link: "/src/assets/heroimg3.png", className: "hero-img-3" },
+            { link: "/assets/heroimg1.png", className: "hero-img-1" },
+            { link: "/assets/heroimg2.png", className: "hero-img-2" },
+            { link: "/assets/heroimg3.png", className: "hero-img-3" },
           ]}
         />
       </Carousel>

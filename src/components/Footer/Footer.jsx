@@ -73,7 +73,7 @@ function Footer() {
         </form>
         <div className="img-trigger">
           <img
-            src="/src/assets/footer-img.png"
+            src="/assets/footer-img.png"
             alt="Cyclist wearing Deko Sportswear"
           />
         </div>
@@ -167,10 +167,7 @@ function Footer() {
         </p>
         <div className="payment-options">
           <span>payment acceptable on</span>
-          <img
-            src="/src/assets/payment-options.png"
-            alt="Our Payment Options"
-          />
+          <img src="/assets/payment-options.png" alt="Our Payment Options" />
         </div>
       </div>
     </footer>
