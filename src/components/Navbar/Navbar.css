@@ -156,13 +156,6 @@
   text-shadow: 1px 1px 1px rgba(var(--color-pri), 50%);
 }
 
-form .form-field {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 .nav-dropdown {
   width: 60vw;
   z-index: -1;

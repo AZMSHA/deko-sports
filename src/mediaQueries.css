@@ -108,6 +108,13 @@
 }
 
 @media screen and (max-width: 600px) {
+  form .form-field {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .nav-logo {
     width: 60%;
 
