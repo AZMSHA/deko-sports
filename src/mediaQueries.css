@@ -120,7 +120,7 @@
   #newsletter form + .img-trigger {
     align-self: baseline;
     z-index: 10;
-    transform: translate(-20%, 0px);
+    transform: translate(-35%, 0px);
   }
   .products-section-title {
     align-items: center;
