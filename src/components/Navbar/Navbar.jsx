@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import PropTypes from "prop-types";
+import NavMobile from "./NavMobile";
 
 function Navbar() {
   const links = [
@@ -239,88 +240,110 @@ function Navbar() {
     e.target.classList.remove("active");
   }
 
+  function turnOnNav(e) {
+    e.preventDefault();
+    const mobileNav = document.getElementById("nav-mobile");
+    mobileNav.classList.add("active");
+  }
+
   return (
-    <header id="navbar">
-      <div className="nav-top">
-        <div>
-          <a href="mailto:sales @dekosports.com">
-            Email : sales@dekosports.com
-          </a>
-          <a href="tel:+52-3613772-75">Tel : 52-3613772-75</a>
-        </div>
-        <div>
-          <a href="/#">
-            Wishlist<span>&#40;0&#41;</span>
-          </a>
-          <select name="currency" id="currency">
-            <option value="USD">USD</option>
-            <option value="GBP">GBP</option>
-            <option value="PKR">PKR</option>
-          </select>
-        </div>
-      </div>
-      <div className="nav-mid">
-        <div className="left">
-          <button type="button" id="hamburger-menu" className="nav-button">
-            <i className="fa-sharp fa-light fa-bars"></i>
-          </button>
-          <input type="search" placeholder="Search" name="search" id="search" />
-        </div>
-        <a className="mid" href="/#">
-          <img
-            className="nav-logo"
-            src="/src/assets/logo.png"
-            alt="Deko Sports Logo"
-          />
-        </a>
-        <div className="right">
-          <button type="button" className="nav-button">
-            <i className="fa-sharp fa-light fa-user"></i>
-            <span>My Account</span>
-          </button>
-          <button type="button" className="nav-button">
-            <i className="fa-sharp fa-light fa-bag-shopping"></i>
-            <span>My Cart</span>
-          </button>
-        </div>
-      </div>
-      <nav
-        className="nav-links
-      "
-      >
-        {links.map((link) => (
-          <div key={link.section} className="nav-link">
-            <a
-              onMouseOver={(e) => bringToFront(e)}
-              onMouseLeave={(e) => pushToBack(e)}
-              menu={link.section.replace(/ /g, "-")}
-              href="/#"
-            >
-              {link.section}
+    <>
+      <header id="navbar">
+        <div className="nav-top desktop">
+          <div>
+            <a href="mailto:sales @dekosports.com">
+              Email : sales@dekosports.com
             </a>
-            <div
-              id={link.section.replace(/ /g, "-")}
-              onMouseOver={(e) => turnOn(e)}
-              onMouseLeave={(e) => turnOff(e)}
-              className="nav-dropdown"
-            >
-              {link.categories.map((category) => (
-                <section key={category.header} className="nav-dropdown-links">
-                  <h4>{category.header}</h4>
-                  <ul>
-                    {category.links.map((link) => (
-                      <a key={link} href="/#">
-                        <li>{link}</li>
-                      </a>
-                    ))}
-                  </ul>
-                </section>
-              ))}
-            </div>
+            <a href="tel:+52-3613772-75">Tel : 52-3613772-75</a>
           </div>
-        ))}
-      </nav>
-    </header>
+          <div>
+            <a href="/#">
+              Wishlist<span>&#40;0&#41;</span>
+            </a>
+            <select name="currency" id="currency">
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+              <option value="PKR">PKR</option>
+            </select>
+          </div>
+        </div>
+        <div className="nav-mid">
+          <div className="left">
+            <button
+              onClick={(e) => {
+                turnOnNav(e);
+              }}
+              type="button"
+              id="hamburger-menu"
+              className="nav-button"
+            >
+              <i className="fa-sharp fa-light fa-bars"></i>
+            </button>
+            <input
+              type="search"
+              placeholder="Search"
+              name="search"
+              className="desktop"
+              id="search"
+            />
+          </div>
+          <a className="mid" href="/#">
+            <img
+              className="nav-logo"
+              src="/src/assets/logo.png"
+              alt="Deko Sports Logo"
+            />
+          </a>
+          <div className="right">
+            <button type="button" className="nav-button">
+              <i className="fa-sharp fa-light fa-user"></i>
+              <span>My Account</span>
+            </button>
+            <button type="button" className="nav-button">
+              <i className="fa-sharp fa-light fa-bag-shopping"></i>
+              <span>My Cart</span>
+            </button>
+          </div>
+        </div>
+        <nav
+          className="nav-links desktop
+      "
+        >
+          {links.map((link) => (
+            <div key={link.section} className="nav-link">
+              <a
+                onMouseOver={(e) => bringToFront(e)}
+                onMouseLeave={(e) => pushToBack(e)}
+                menu={link.section.replace(/ /g, "-")}
+                href="/#"
+              >
+                {link.section}
+              </a>
+              <div
+                id={link.section.replace(/ /g, "-")}
+                onMouseOver={(e) => turnOn(e)}
+                onMouseLeave={(e) => turnOff(e)}
+                className="nav-dropdown"
+              >
+                {link.categories.map((category) => (
+                  <section key={category.header} className="nav-dropdown-links">
+                    <h4>{category.header}</h4>
+                    <ul>
+                      {category.links.map((link) => (
+                        <a key={link} href="/#">
+                          <li>{link}</li>
+                        </a>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+              </div>
+            </div>
+          ))}
+        </nav>
+      </header>
+      <NavMobile links={links} />
+    </>
   );
 }
 

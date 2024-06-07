@@ -108,6 +108,15 @@
 }
 
 @media screen and (max-width: 600px) {
+  .nav-logo {
+    width: 60%;
+
+    transform: translate(30%, 0px);
+  }
+
+  #nav-mobile {
+    display: flex;
+  }
   #newsletter form + .img-trigger {
     align-self: baseline;
     z-index: 10;
@@ -126,17 +135,10 @@
   }
 
   #hamburger-menu {
+    margin-left: 1rem;
     display: flex;
   }
-  .nav-links {
-    display: none;
-  }
-
-  #search {
-    display: none;
-  }
-
-  .nav-top {
+  .desktop {
     display: none;
   }
   #hero .hero-images {
@@ -169,10 +171,15 @@
   }
 
   .nav-button {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .nav-button span {
-    font-size: 0.8rem;
+    display: none;
+  }
+
+  .nav-mid div {
+    gap: 1rem;
+    margin-right: 1rem;
   }
 }

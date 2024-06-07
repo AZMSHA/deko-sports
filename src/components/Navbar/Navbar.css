@@ -93,7 +93,7 @@
   display: none;
   align-items: center;
   justify-content: center;
-  padding-top: 0.25rem;
+  padding-top: 0.1rem;
   height: 2.5rem;
   width: 2.5rem;
   color: rgba(var(--color-qua));
