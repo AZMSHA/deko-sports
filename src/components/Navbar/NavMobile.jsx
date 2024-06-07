@@ -22,11 +22,7 @@ function NavMobile({ links }) {
 
   return (
     <nav id="nav-mobile">
-      <img
-        className="nav-logo"
-        src="/src/assets/logo.png"
-        alt="Deko Sports Logo"
-      />
+      <img className="nav-logo" src="/assets/logo.png" alt="Deko Sports Logo" />
       <button
         onClick={(e) => {
           turnOffNav(e);

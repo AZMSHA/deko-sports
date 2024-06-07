@@ -290,7 +290,7 @@ function Navbar() {
           <a className="mid" href="/#">
             <img
               className="nav-logo"
-              src="/src/assets/logo.png"
+              src="/assets/logo.png"
               alt="Deko Sports Logo"
             />
           </a>
